@@ -1,0 +1,15 @@
+# Copyright (C) 2025-2026 Mitsubishi Electric Research Laboratories (MERL)
+#
+# SPDX-License-Identifier: BSD-3-Clause
+# Request
+int32 drone_id                    # Drone instance ID (1, 2, 4, 5, etc.)
+string save_directory             # Directory to save the image (optional, uses default if empty)
+string filename_prefix            # Prefix for the filename (optional, uses timestamp if empty)
+bool include_metadata             # Whether to save metadata file alongside image
+---
+# Response
+bool success                      # True if photo was captured successfully
+string message                    # Status message or error description
+string image_path                 # Full path to the saved image file
+string metadata_path              # Full path to metadata file (if requested)
+builtin_interfaces/Time timestamp # When the photo was captured

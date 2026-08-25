@@ -1,0 +1,68 @@
+Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+
+Files: .gitmodules
+       .github/workflows/requirements-dev.txt
+       .gitignore
+       CITATION.cff
+       requirements.txt
+       src/caric2_baseline_*/resource/caric2_baseline_*
+       src/mission_manager/resource/mission_manager
+       src/px4_files/ROMFS/*
+       src/mission_manager/models/mbs/model.sdf
+       src/mission_manager/models/powerline/model.sdf
+       src/mission_manager/worlds/*.sdf
+       src/PX4-Autopilot/Tools/simulation/gz/worlds/mbs_10_poi.sdf
+       src/PX4-Autopilot/Tools/simulation/gz/worlds/powerline_10_poi.sdf
+       src/mission_manager/models/powerline/powerLine.stl
+       .pre-commit-config.yaml
+       .github/workflows/*.yaml
+       src/mission_manager/config/*.yaml
+       src/mission_manager/models/powerline/bounding_boxes/box_description.yaml
+       src/px4_ros_com/launch/*.yaml
+       src/mission_manager/models/x500_lidar_gimbal_explorer/model.config
+       src/mission_manager/models/x500_lidar_gimbal_explorer/model.sdf
+       src/*/setup.cfg
+       src/mission_manager/models/*/voxel_grid/*.pkl
+       README.md
+       CONTRIBUTING.md
+       src/*/srv/*.srv
+       src/px4_msgs/srv/*.srv
+       src/vehicle_controller_interfaces/srv/*.srv
+       src/mission_manager/models/*/voxel_grid/*.npy
+Copyright: 2025-2026 Mitsubishi Electric Research Laboratories (MERL)
+License: BSD-3-Clause
+
+Files: src/mission_manager/models/x500/**
+       src/mission_manager/models/x500_base/LICENSE
+       src/mission_manager/models/x500_base/model.config
+       src/mission_manager/models/x500_base/thumbnails/*
+       src/mission_manager/models/x500_base/materials/textures/*
+       src/mission_manager/models/x500_base/meshes/1345_prop_ccw.stl
+       src/mission_manager/models/x500_base/meshes/1345_prop_cw.stl
+       src/mission_manager/models/x500_base/meshes/CF.png
+Copyright: 2022 Rudis Laboratories
+License: BSD-3-Clause
+
+Files: src/mission_manager/models/x500_base/model.sdf
+       src/mission_manager/models/x500_base/meshes/*.dae
+Copyright: 2022 Rudis Laboratories
+           2023-2025 PX4 Autopilot for Drones
+           2025-2026 Mitsubishi Electric Research Laboratories (MERL)
+License: BSD-3-Clause
+
+Files: src/mission_manager/models/gimbal/model.config
+       src/mission_manager/models/gimbal/meshes/*
+       src/mission_manager/models/gimbal_photographer/meshes/*
+Copyright: 2022 PX4 Autopilot for Drones
+License: BSD-3-Clause
+
+Files: src/mission_manager/models/gimbal/model.sdf
+       src/mission_manager/models/gimbal_photographer/model.config
+       src/mission_manager/models/gimbal_photographer/model.sdf
+       src/mission_manager/models/x500_gimbal_photographer/model.sdf
+       src/mission_manager/models/x500_gimbal_photographer/model.config
+       src/mission_manager/models/lidar_3d_v2/model.config
+       src/mission_manager/models/lidar_3d_v2/model.sdf
+Copyright: 2022 PX4 Autopilot for Drones
+           2025-2026 Mitsubishi Electric Research Laboratories (MERL)
+License: BSD-3-Clause

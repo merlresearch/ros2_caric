@@ -1,0 +1,7 @@
+pathfinding
+scikit-learn
+kneed
+networkx
+numpy
+matplotlib
+openscvx

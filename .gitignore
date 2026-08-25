@@ -1,0 +1,52 @@
+### Python / build / env
+__pycache__/
+*.py[cod]
+*.pyo
+*.so
+*.dll
+*.dylib
+*.egg-info/
+*.egg
+dist/
+*.log
+
+### ROS2 / colcon / build artifacts
+build/
+install/
+log/
+
+### Editor / OS cruft
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+~$*
+
+# Generated message/service files
+msg/*Action*.msg
+msg/*Feedback.msg
+msg/*Goal.msg
+msg/*Result.msg
+msg/_*.py
+srv/_*.py
+msg_gen/
+srv_gen/
+
+# Dynamic reconfigure
+*.cfgc
+/cfg/cpp/
+/cfg/*.py
+
+# Ignore CARIC assets that are fetched from GPLv2
+src/mission_manager/models/mbs/bounding_boxes/
+src/mission_manager/models/mbs/mbs.stl
+src/mission_manager/captured_images/*
+src/mission_manager/results/*
+
+# Ignore figures
+figures/
+.tools/
+.cache-py312/
+.mplconfig-py312/
+.uv-cache/
+.venv-py312-openscvx

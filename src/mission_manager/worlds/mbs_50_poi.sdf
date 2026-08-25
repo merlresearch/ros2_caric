@@ -1,0 +1,1126 @@
+<?xml version="1.0"?>
+<sdf version='1.8'>
+  <world name='mbs_50_poi'>
+    <!-- Set gravity vector -->
+  <gravity>0 0 -9.8</gravity>
+    <!-- Basic lighting -->
+    <light name='sun' type='directional'>
+      <cast_shadows>true</cast_shadows>
+      <pose>0 0 10 0 -0 0</pose>
+      <diffuse>0.8 0.8 0.8 1</diffuse>
+      <specular>0.1 0.1 0.1 1</specular>
+      <attenuation>
+        <range>1000</range>
+        <constant>0.9</constant>
+        <linear>0.01</linear>
+        <quadratic>0.001</quadratic>
+      </attenuation>
+      <direction>-0.5 0.5 -1</direction>
+    </light>
+
+    <!-- Ground plane -->
+    <model name='ground_plane'>
+      <static>true</static>
+      <link name='link'>
+        <collision name='collision'>
+          <geometry>
+            <plane>
+              <normal>0 0 1</normal>
+              <size>2000 2000</size>
+            </plane>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>100</mu>
+                <mu2>50</mu2>
+              </ode>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <cast_shadows>false</cast_shadows>
+          <geometry>
+            <plane>
+              <normal>0 0 1</normal>
+              <size>2000 2000</size>
+            </plane>
+          </geometry>
+          <material>
+            <ambient>0.5 0.5 0.5 1</ambient>
+            <diffuse>0.5 0.5 0.5 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+    <!-- The MBS model -->
+    <model name='mbs'>
+      <pose>0.68 2.98 0.00 0 0 0</pose>
+      <static>true</static>
+      <link name='body'>
+        <collision name='collision'>
+          <geometry>
+            <mesh>
+              <uri>model://mbs/mbs.stl</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>0.8</mu>
+                <mu2>0.8</mu2>
+              </ode>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>model://mbs/mbs.stl</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <ambient>0.6 0.6 0.6 1</ambient>
+            <diffuse>0.6 0.6 0.6 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+
+
+    <!-- GCS Model (Box for now)-->
+    <model name='gcs'>
+      <pose>0 -25 0 0.0 0.0 0.0</pose>
+      <static>true</static>
+      <link name='link'>
+        <collision name='collision'>
+          <geometry>
+            <box>
+              <size>1.5 1.5 1.5</size>
+            </box>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>0.8</mu>
+                <mu2>0.8</mu2>
+              </ode>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <box>
+              <size>1.5 1.5 1.5</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>1.0 1.0 0.0 1.0</ambient>
+            <diffuse>1.0 1.0 0.0 1.0</diffuse>
+            <specular>1.0 0.2 0.0 1.0</specular>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+<!-- Points of Interest (POI) -->
+    <model name="poi_0000">
+    <static>true</static>
+    <link name="link">
+      <visual name="visual">
+        <geometry>
+          <box>
+            <size>0.5 0.5 0.5</size>
+          </box>
+        </geometry>
+        <material>
+          <ambient>1 0 0 1</ambient>
+          <diffuse>1 0 0 1</diffuse>
+          <specular>0.2 0 0 1</specular>
+        </material>
+      </visual>
+    </link>
+    <pose>12.574999809265137 11.559514999389648 13.199999809265137 0 0 0</pose>
+  </model>
+
+  <model name="poi_0001">
+    <static>true</static>
+    <link name="link">
+      <visual name="visual">
+        <geometry>
+          <box>
+            <size>0.5 0.5 0.5</size>
+          </box>
+        </geometry>
+        <material>
+          <ambient>1 0 0 1</ambient>
+          <diffuse>1 0 0 1</diffuse>
+          <specular>0.2 0 0 1</specular>
+        </material>
+      </visual>
+    </link>
+    <pose>9.3999996185302734 11.84 35.818099975585938 0 0 0</pose>
+  </model>
+
+  <model name="poi_0002">
+    <static>true</static>
+    <link name="link">
+      <visual name="visual">
+        <geometry>
+          <box>
+            <size>0.5 0.5 0.5</size>
+          </box>
+        </geometry>
+        <material>
+          <ambient>1 0 0 1</ambient>
+          <diffuse>1 0 0 1</diffuse>
+          <specular>0.2 0 0 1</specular>
+        </material>
+      </visual>
+    </link>
+    <pose>5.908289909362793 13.417082786560059 15.538000106811523 0 0 0</pose>
+  </model>
+
+  <model name="poi_0003">
+    <static>true</static>
+    <link name="link">
+      <visual name="visual">
+        <geometry>
+          <box>
+            <size>0.5 0.5 0.5</size>
+          </box>
+        </geometry>
+        <material>
+          <ambient>1 0 0 1</ambient>
+          <diffuse>1 0 0 1</diffuse>
+          <specular>0.2 0 0 1</specular>
+        </material>
+      </visual>
+    </link>
+    <pose>9.3999996185302734 12.43675422668457 16.707000732421875 0 0 0</pose>
+  </model>
+
+  <model name="poi_0004">
+    <static>true</static>
+    <link name="link">
+      <visual name="visual">
+        <geometry>
+          <box>
+            <size>0.5 0.5 0.5</size>
+          </box>
+        </geometry>
+        <material>
+          <ambient>1 0 0 1</ambient>
+          <diffuse>1 0 0 1</diffuse>
+          <specular>0.2 0 0 1</specular>
+        </material>
+      </visual>
+    </link>
+    <pose>18.264999389648438 9.00 40.39630126953125 0 0 0</pose>
+  </model>
+
+  <model name="poi_0005">
+    <static>true</static>
+    <link name="link">
+      <visual name="visual">
+        <geometry>
+          <box>
+            <size>0.5 0.5 0.5</size>
+          </box>
+        </geometry>
+        <material>
+          <ambient>1 0 0 1</ambient>
+          <diffuse>1 0 0 1</diffuse>
+          <specular>0.2 0 0 1</specular>
+        </material>
+      </visual>
+    </link>
+    <pose>14.155799865722656 11.184494018554688 19.538700103759766 0 0 0</pose>
+  </model>
+
+  <model name="poi_0006">
+    <static>true</static>
+    <link name="link">
+      <visual name="visual">
+        <geometry>
+          <box>
+            <size>0.5 0.5 0.5</size>
+          </box>
+        </geometry>
+        <material>
+          <ambient>1 0 0 1</ambient>
+          <diffuse>1 0 0 1</diffuse>
+          <specular>0.2 0 0 1</specular>
+        </material>
+      </visual>
+    </link>
+    <pose>10.444700241088867 12.299572944641113 20.214000701904297 0 0 0</pose>
+  </model>
+
+  <model name="poi_0007">
+    <static>true</static>
+    <link name="link">
+      <visual name="visual">
+        <geometry>
+          <box>
+            <size>0.5 0.5 0.5</size>
+          </box>
+        </geometry>
+        <material>
+          <ambient>1 0 0 1</ambient>
+          <diffuse>1 0 0 1</diffuse>
+          <specular>0.2 0 0 1</specular>
+        </material>
+      </visual>
+    </link>
+    <pose>12.406000137329102 10.834890365600586 40.570499420166016 0 0 0</pose>
+  </model>
+
+  <model name="poi_0008">
+    <static>true</static>
+    <link name="link">
+      <visual name="visual">
+        <geometry>
+          <box>
+            <size>0.5 0.5 0.5</size>
+          </box>
+        </geometry>
+        <material>
+          <ambient>1 0 0 1</ambient>
+          <diffuse>1 0 0 1</diffuse>
+          <specular>0.2 0 0 1</specular>
+        </material>
+      </visual>
+    </link>
+    <pose>13.218099594116211 11.557124137878418 22.072299957275391 0 0 0</pose>
+  </model>
+
+  <model name="poi_0009">
+    <static>true</static>
+    <link name="link">
+      <visual name="visual">
+        <geometry>
+          <box>
+            <size>0.5 0.5 0.5</size>
+          </box>
+        </geometry>
+        <material>
+          <ambient>1 0 0 1</ambient>
+          <diffuse>1 0 0 1</diffuse>
+          <specular>0.2 0 0 1</specular>
+        </material>
+      </visual>
+    </link>
+    <pose>8.96 12.795768737792969 23.721000671386719 0 0 0</pose>
+  </model>
+
+  <model name="poi_0010">
+    <static>true</static>
+    <link name="link">
+      <visual name="visual">
+        <geometry>
+          <box>
+            <size>0.5 0.5 0.5</size>
+          </box>
+        </geometry>
+        <material>
+          <ambient>1 0 0 1</ambient>
+          <diffuse>1 0 0 1</diffuse>
+          <specular>0.2 0 0 1</specular>
+        </material>
+      </visual>
+    </link>
+    <pose>15.722100257873535 10.695314407348633 24.046199798583984 0 0 0</pose>
+  </model>
+
+  <model name="poi_0011">
+    <static>true</static>
+    <link name="link">
+      <visual name="visual">
+        <geometry>
+          <box>
+            <size>0.5 0.5 0.5</size>
+          </box>
+        </geometry>
+        <material>
+          <ambient>1 0 0 1</ambient>
+          <diffuse>1 0 0 1</diffuse>
+          <specular>0.2 0 0 1</specular>
+        </material>
+      </visual>
+    </link>
+    <pose>14.22029972076416 10.983824729919434 32.6343994140625 0 0 0</pose>
+  </model>
+
+  <model name="poi_0012">
+    <static>true</static>
+    <link name="link">
+      <visual name="visual">
+        <geometry>
+          <box>
+            <size>0.5 0.5 0.5</size>
+          </box>
+        </geometry>
+        <material>
+          <ambient>1 0 0 1</ambient>
+          <diffuse>1 0 0 1</diffuse>
+          <specular>0.2 0 0 1</specular>
+        </material>
+      </visual>
+    </link>
+    <pose>10.657299995422363 11.966388702392578 27.228000640869141 0 0 0</pose>
+  </model>
+
+  <model name="poi_0013">
+    <static>true</static>
+    <link name="link">
+      <visual name="visual">
+        <geometry>
+          <box>
+            <size>0.5 0.5 0.5</size>
+          </box>
+        </geometry>
+        <material>
+          <ambient>1 0 0 1</ambient>
+          <diffuse>1 0 0 1</diffuse>
+          <specular>0.2 0 0 1</specular>
+        </material>
+      </visual>
+    </link>
+    <pose>16.750999450683594 10.405607223510742 26.993900299072266 0 0 0</pose>
+  </model>
+
+  <model name="poi_0014">
+    <static>true</static>
+    <link name="link">
+      <visual name="visual">
+        <geometry>
+          <box>
+            <size>0.5 0.5 0.5</size>
+          </box>
+        </geometry>
+        <material>
+          <ambient>1 0 0 1</ambient>
+          <diffuse>1 0 0 1</diffuse>
+          <specular>0.2 0 0 1</specular>
+        </material>
+      </visual>
+    </link>
+    <pose>8.6825199127197266 12.692320823669434 29.565999984741211 0 0 0</pose>
+  </model>
+
+  <model name="poi_0015">
+    <static>true</static>
+    <link name="link">
+      <visual name="visual">
+        <geometry>
+          <box>
+            <size>0.5 0.5 0.5</size>
+          </box>
+        </geometry>
+        <material>
+          <ambient>1 0 0 1</ambient>
+          <diffuse>1 0 0 1</diffuse>
+          <specular>0.2 0 0 1</specular>
+        </material>
+      </visual>
+    </link>
+    <pose>6.1462101936340332 13.03 33.647201538085938 0 0 0</pose>
+  </model>
+
+  <model name="poi_0016">
+    <static>true</static>
+    <link name="link">
+      <visual name="visual">
+        <geometry>
+          <box>
+            <size>0.5 0.5 0.5</size>
+          </box>
+        </geometry>
+        <material>
+          <ambient>1 0 0 1</ambient>
+          <diffuse>1 0 0 1</diffuse>
+          <specular>0.2 0 0 1</specular>
+        </material>
+      </visual>
+    </link>
+    <pose>43.090000152587891 1.5681102275848389 10.590000152587891 0 0 0</pose>
+  </model>
+
+  <model name="poi_0017">
+    <static>true</static>
+    <link name="link">
+      <visual name="visual">
+        <geometry>
+          <box>
+            <size>0.5 0.5 0.5</size>
+          </box>
+        </geometry>
+        <material>
+          <ambient>1 0 0 1</ambient>
+          <diffuse>1 0 0 1</diffuse>
+          <specular>0.2 0 0 1</specular>
+        </material>
+      </visual>
+    </link>
+    <pose>41.467601776123047 2.3524768352508545 11.916999816894531 0 0 0</pose>
+  </model>
+
+  <model name="poi_0018">
+    <static>true</static>
+    <link name="link">
+      <visual name="visual">
+        <geometry>
+          <box>
+            <size>0.5 0.5 0.5</size>
+          </box>
+        </geometry>
+        <material>
+          <ambient>1 0 0 1</ambient>
+          <diffuse>1 0 0 1</diffuse>
+          <specular>0.2 0 0 1</specular>
+        </material>
+      </visual>
+    </link>
+    <pose>43.090000152587891 1.7920757532119751 13.244000434875488 0 0 0</pose>
+  </model>
+
+  <model name="poi_0019">
+    <static>true</static>
+    <link name="link">
+      <visual name="visual">
+        <geometry>
+          <box>
+            <size>0.5 0.5 0.5</size>
+          </box>
+        </geometry>
+        <material>
+          <ambient>1 0 0 1</ambient>
+          <diffuse>1 0 0 1</diffuse>
+          <specular>0.2 0 0 1</specular>
+        </material>
+      </visual>
+    </link>
+    <pose>47.593257904052734 -0.51557397842407227 14.571000099182129 0 0 0</pose>
+  </model>
+
+  <model name="poi_0020">
+    <static>true</static>
+    <link name="link">
+      <visual name="visual">
+        <geometry>
+          <box>
+            <size>0.5 0.5 0.5</size>
+          </box>
+        </geometry>
+        <material>
+          <ambient>1 0 0 1</ambient>
+          <diffuse>1 0 0 1</diffuse>
+          <specular>0.2 0 0 1</specular>
+        </material>
+      </visual>
+    </link>
+    <pose>43.090000152587891 1.7522130012512207 15.89799976348877 0 0 0</pose>
+  </model>
+
+  <model name="poi_0021">
+    <static>true</static>
+    <link name="link">
+      <visual name="visual">
+        <geometry>
+          <box>
+            <size>0.5 0.5 0.5</size>
+          </box>
+        </geometry>
+        <material>
+          <ambient>1 0 0 1</ambient>
+          <diffuse>1 0 0 1</diffuse>
+          <specular>0.2 0 0 1</specular>
+        </material>
+      </visual>
+    </link>
+    <pose>40.321701049804688 3.299736499786377 17.225000381469727 0 0 0</pose>
+  </model>
+
+  <model name="poi_0022">
+    <static>true</static>
+    <link name="link">
+      <visual name="visual">
+        <geometry>
+          <box>
+            <size>0.5 0.5 0.5</size>
+          </box>
+        </geometry>
+        <material>
+          <ambient>1 0 0 1</ambient>
+          <diffuse>1 0 0 1</diffuse>
+          <specular>0.2 0 0 1</specular>
+        </material>
+      </visual>
+    </link>
+    <pose>43.090000152587891 1.7990800142288208 18.552000045776367 0 0 0</pose>
+  </model>
+
+  <model name="poi_0023">
+    <static>true</static>
+    <link name="link">
+      <visual name="visual">
+        <geometry>
+          <box>
+            <size>0.5 0.5 0.5</size>
+          </box>
+        </geometry>
+        <material>
+          <ambient>1 0 0 1</ambient>
+          <diffuse>1 0 0 1</diffuse>
+          <specular>0.2 0 0 1</specular>
+        </material>
+      </visual>
+    </link>
+    <pose>37.762100219726562 3.969306468963623 19.878999710083008 0 0 0</pose>
+  </model>
+
+  <model name="poi_0024">
+    <static>true</static>
+    <link name="link">
+      <visual name="visual">
+        <geometry>
+          <box>
+            <size>0.5 0.5 0.5</size>
+          </box>
+        </geometry>
+        <material>
+          <ambient>1 0 0 1</ambient>
+          <diffuse>1 0 0 1</diffuse>
+          <specular>0.2 0 0 1</specular>
+        </material>
+      </visual>
+    </link>
+    <pose>43.090000152587891 1.9758154153823853 21.205999374389648 0 0 0</pose>
+  </model>
+
+  <model name="poi_0025">
+    <static>true</static>
+    <link name="link">
+      <visual name="visual">
+        <geometry>
+          <box>
+            <size>0.5 0.5 0.5</size>
+          </box>
+        </geometry>
+        <material>
+          <ambient>1 0 0 1</ambient>
+          <diffuse>1 0 0 1</diffuse>
+          <specular>0.2 0 0 1</specular>
+        </material>
+      </visual>
+    </link>
+    <pose>48.405300140380859 -0.83510744571685791 22.533000946044922 0 0 0</pose>
+  </model>
+
+  <model name="poi_0026">
+    <static>true</static>
+    <link name="link">
+      <visual name="visual">
+        <geometry>
+          <box>
+            <size>0.5 0.5 0.5</size>
+          </box>
+        </geometry>
+        <material>
+          <ambient>1 0 0 1</ambient>
+          <diffuse>1 0 0 1</diffuse>
+          <specular>0.2 0 0 1</specular>
+        </material>
+      </visual>
+    </link>
+    <pose>45.056800842285156 0.8009980320930481 23.860000610351562 0 0 0</pose>
+  </model>
+
+  <model name="poi_0027">
+    <static>true</static>
+    <link name="link">
+      <visual name="visual">
+        <geometry>
+          <box>
+            <size>0.5 0.5 0.5</size>
+          </box>
+        </geometry>
+        <material>
+          <ambient>1 0 0 1</ambient>
+          <diffuse>1 0 0 1</diffuse>
+          <specular>0.2 0 0 1</specular>
+        </material>
+      </visual>
+    </link>
+    <pose>36.79 4.14 34.59 0 0 0</pose>
+  </model>
+
+  <model name="poi_0028">
+    <static>true</static>
+    <link name="link">
+      <visual name="visual">
+        <geometry>
+          <box>
+            <size>0.5 0.5 0.5</size>
+          </box>
+        </geometry>
+        <material>
+          <ambient>1 0 0 1</ambient>
+          <diffuse>1 0 0 1</diffuse>
+          <specular>0.2 0 0 1</specular>
+        </material>
+      </visual>
+    </link>
+    <pose>43.090000152587891 1.728690505027771 26.513999938964844 0 0 0</pose>
+  </model>
+
+  <model name="poi_0029">
+    <static>true</static>
+    <link name="link">
+      <visual name="visual">
+        <geometry>
+          <box>
+            <size>0.5 0.5 0.5</size>
+          </box>
+        </geometry>
+        <material>
+          <ambient>1 0 0 1</ambient>
+          <diffuse>1 0 0 1</diffuse>
+          <specular>0.2 0 0 1</specular>
+        </material>
+      </visual>
+    </link>
+    <pose>35.493400573730469 5.2652435302734375 27.840999603271484 0 0 0</pose>
+  </model>
+
+  <model name="poi_0030">
+    <static>true</static>
+    <link name="link">
+      <visual name="visual">
+        <geometry>
+          <box>
+            <size>0.5 0.5 0.5</size>
+          </box>
+        </geometry>
+        <material>
+          <ambient>1 0 0 1</ambient>
+          <diffuse>1 0 0 1</diffuse>
+          <specular>0.2 0 0 1</specular>
+        </material>
+      </visual>
+    </link>
+    <pose>47.38201904296875 -0.50696998834609985 29.167999267578125 0 0 0</pose>
+  </model>
+
+  <model name="poi_0031">
+    <static>true</static>
+    <link name="link">
+      <visual name="visual">
+        <geometry>
+          <box>
+            <size>0.5 0.5 0.5</size>
+          </box>
+        </geometry>
+        <material>
+          <ambient>1 0 0 1</ambient>
+          <diffuse>1 0 0 1</diffuse>
+          <specular>0.2 0 0 1</specular>
+        </material>
+      </visual>
+    </link>
+    <pose>43.090000152587891 1.5447119474411011 30.495000839233398 0 0 0</pose>
+  </model>
+
+  <model name="poi_0032">
+    <static>true</static>
+    <link name="link">
+      <visual name="visual">
+        <geometry>
+          <box>
+            <size>0.5 0.5 0.5</size>
+          </box>
+        </geometry>
+        <material>
+          <ambient>1 0 0 1</ambient>
+          <diffuse>1 0 0 1</diffuse>
+          <specular>0.2 0 0 1</specular>
+        </material>
+      </visual>
+    </link>
+    <pose>38.603599548339844 2.177570104598999 27.622108459472656 0 0 0</pose>
+  </model>
+
+  <model name="poi_0033">
+    <static>true</static>
+    <link name="link">
+      <visual name="visual">
+        <geometry>
+          <box>
+            <size>0.5 0.5 0.5</size>
+          </box>
+        </geometry>
+        <material>
+          <ambient>1 0 0 1</ambient>
+          <diffuse>1 0 0 1</diffuse>
+          <specular>0.2 0 0 1</specular>
+        </material>
+      </visual>
+    </link>
+    <pose>45.594970703125 0.16066500544548035 33.148998260498047 0 0 0</pose>
+  </model>
+
+  <model name="poi_0034">
+    <static>true</static>
+    <link name="link">
+      <visual name="visual">
+        <geometry>
+          <box>
+            <size>0.5 0.5 0.5</size>
+          </box>
+        </geometry>
+        <material>
+          <ambient>1 0 0 1</ambient>
+          <diffuse>1 0 0 1</diffuse>
+          <specular>0.2 0 0 1</specular>
+        </material>
+      </visual>
+    </link>
+    <pose>68.571098327636719 -13.788274765014648 33.130001068115234 0 0 0</pose>
+  </model>
+
+  <model name="poi_0035">
+    <static>true</static>
+    <link name="link">
+      <visual name="visual">
+        <geometry>
+          <box>
+            <size>0.5 0.5 0.5</size>
+          </box>
+        </geometry>
+        <material>
+          <ambient>1 0 0 1</ambient>
+          <diffuse>1 0 0 1</diffuse>
+          <specular>0.2 0 0 1</specular>
+        </material>
+      </visual>
+    </link>
+    <pose>64.239799499511719 -9.9481945037841797 29.21980094909668 0 0 0</pose>
+  </model>
+
+  <model name="poi_0036">
+    <static>true</static>
+    <link name="link">
+      <visual name="visual">
+        <geometry>
+          <box>
+            <size>0.5 0.5 0.5</size>
+          </box>
+        </geometry>
+        <material>
+          <ambient>1 0 0 1</ambient>
+          <diffuse>1 0 0 1</diffuse>
+          <specular>0.2 0 0 1</specular>
+        </material>
+      </visual>
+    </link>
+    <pose>68.080001831054688 -12.708561897277832 23.89900016784668 0 0 0</pose>
+  </model>
+
+  <model name="poi_0037">
+    <static>true</static>
+    <link name="link">
+      <visual name="visual">
+        <geometry>
+          <box>
+            <size>0.5 0.5 0.5</size>
+          </box>
+        </geometry>
+        <material>
+          <ambient>1 0 0 1</ambient>
+          <diffuse>1 0 0 1</diffuse>
+          <specular>0.2 0 0 1</specular>
+        </material>
+      </visual>
+    </link>
+    <pose>62.910900115966797 -9.372319221496582 37.474498748779297 0 0 0</pose>
+  </model>
+
+  <model name="poi_0038">
+    <static>true</static>
+    <link name="link">
+      <visual name="visual">
+        <geometry>
+          <box>
+            <size>0.5 0.5 0.5</size>
+          </box>
+        </geometry>
+        <material>
+          <ambient>1 0 0 1</ambient>
+          <diffuse>1 0 0 1</diffuse>
+          <specular>0.2 0 0 1</specular>
+        </material>
+      </visual>
+    </link>
+    <pose>68.080001831054688 -13.454799652099609 35.889999389648438 0 0 0</pose>
+  </model>
+
+  <model name="poi_0039">
+    <static>true</static>
+    <link name="link">
+      <visual name="visual">
+        <geometry>
+          <box>
+            <size>0.5 0.5 0.5</size>
+          </box>
+        </geometry>
+        <material>
+          <ambient>1 0 0 1</ambient>
+          <diffuse>1 0 0 1</diffuse>
+          <specular>0.2 0 0 1</specular>
+        </material>
+      </visual>
+    </link>
+    <pose>71.757499694824219 -16.185430526733398 40.422100067138672 0 0 0</pose>
+  </model>
+
+  <model name="poi_0040">
+    <static>true</static>
+    <link name="link">
+      <visual name="visual">
+        <geometry>
+          <box>
+            <size>0.5 0.5 0.5</size>
+          </box>
+        </geometry>
+        <material>
+          <ambient>1 0 0 1</ambient>
+          <diffuse>1 0 0 1</diffuse>
+          <specular>0.2 0 0 1</specular>
+        </material>
+      </visual>
+    </link>
+    <pose>71.474800109863281 -15.929194450378418 37.270000457763672 0 0 0</pose>
+  </model>
+
+  <model name="poi_0041">
+    <static>true</static>
+    <link name="link">
+      <visual name="visual">
+        <geometry>
+          <box>
+            <size>0.5 0.5 0.5</size>
+          </box>
+        </geometry>
+        <material>
+          <ambient>1 0 0 1</ambient>
+          <diffuse>1 0 0 1</diffuse>
+          <specular>0.2 0 0 1</specular>
+        </material>
+      </visual>
+    </link>
+    <pose>73.964599609375 -17.37324333190918 37.959999084472656 0 0 0</pose>
+  </model>
+
+  <model name="poi_0042">
+    <static>true</static>
+    <link name="link">
+      <visual name="visual">
+        <geometry>
+          <box>
+            <size>0.5 0.5 0.5</size>
+          </box>
+        </geometry>
+        <material>
+          <ambient>1 0 0 1</ambient>
+          <diffuse>1 0 0 1</diffuse>
+          <specular>0.2 0 0 1</specular>
+        </material>
+      </visual>
+    </link>
+    <pose>62.901901245117188 -10.250583648681641 41.135601043701172 0 0 0</pose>
+  </model>
+
+  <model name="poi_0043">
+    <static>true</static>
+    <link name="link">
+      <visual name="visual">
+        <geometry>
+          <box>
+            <size>0.5 0.5 0.5</size>
+          </box>
+        </geometry>
+        <material>
+          <ambient>1 0 0 1</ambient>
+          <diffuse>1 0 0 1</diffuse>
+          <specular>0.2 0 0 1</specular>
+        </material>
+      </visual>
+    </link>
+    <pose>68.080001831054688 -13.457438468933105 39.340000152587891 0 0 0</pose>
+  </model>
+
+  <model name="poi_0044">
+    <static>true</static>
+    <link name="link">
+      <visual name="visual">
+        <geometry>
+          <box>
+            <size>0.5 0.5 0.5</size>
+          </box>
+        </geometry>
+        <material>
+          <ambient>1 0 0 1</ambient>
+          <diffuse>1 0 0 1</diffuse>
+          <specular>0.2 0 0 1</specular>
+        </material>
+      </visual>
+    </link>
+    <pose>71.27 -14.95 18.59 0 0 0</pose>
+  </model>
+
+  <model name="poi_0045">
+    <static>true</static>
+    <link name="link">
+      <visual name="visual">
+        <geometry>
+          <box>
+            <size>0.5 0.5 0.5</size>
+          </box>
+        </geometry>
+        <material>
+          <ambient>1 0 0 1</ambient>
+          <diffuse>1 0 0 1</diffuse>
+          <specular>0.2 0 0 1</specular>
+        </material>
+      </visual>
+    </link>
+    <pose>66.358200073242188 -11.65 27.72 0 0 0</pose>
+  </model>
+
+  <model name="poi_0046">
+    <static>true</static>
+    <link name="link">
+      <visual name="visual">
+        <geometry>
+          <box>
+            <size>0.5 0.5 0.5</size>
+          </box>
+        </geometry>
+        <material>
+          <ambient>1 0 0 1</ambient>
+          <diffuse>1 0 0 1</diffuse>
+          <specular>0.2 0 0 1</specular>
+        </material>
+      </visual>
+    </link>
+    <pose>67.158401489257812 -13.442999839782715 45.666515350341797 0 0 0</pose>
+  </model>
+
+  <model name="poi_0047">
+    <static>true</static>
+    <link name="link">
+      <visual name="visual">
+        <geometry>
+          <box>
+            <size>0.5 0.5 0.5</size>
+          </box>
+        </geometry>
+        <material>
+          <ambient>1 0 0 1</ambient>
+          <diffuse>1 0 0 1</diffuse>
+          <specular>0.2 0 0 1</specular>
+        </material>
+      </visual>
+    </link>
+    <pose>68.080001831054688 -14.277400970458984 44.193401336669922 0 0 0</pose>
+  </model>
+
+  <model name="poi_0048">
+    <static>true</static>
+    <link name="link">
+      <visual name="visual">
+        <geometry>
+          <box>
+            <size>0.5 0.5 0.5</size>
+          </box>
+        </geometry>
+        <material>
+          <ambient>1 0 0 1</ambient>
+          <diffuse>1 0 0 1</diffuse>
+          <specular>0.2 0 0 1</specular>
+        </material>
+      </visual>
+    </link>
+    <pose>68.080001831054688 -13.512066841125488 42.790000915527344 0 0 0</pose>
+  </model>
+
+  <model name="poi_0049">
+    <static>true</static>
+    <link name="link">
+      <visual name="visual">
+        <geometry>
+          <box>
+            <size>0.5 0.5 0.5</size>
+          </box>
+        </geometry>
+        <material>
+          <ambient>1 0 0 1</ambient>
+          <diffuse>1 0 0 1</diffuse>
+          <specular>0.2 0 0 1</specular>
+        </material>
+      </visual>
+    </link>
+    <pose>62.091300964355469 -10.291632652282715 49.399700164794922 0 0 0</pose>
+  </model>
+
+    <!-- False POIs -->
+    <!-- <model name='fp_poi_0270'>
+      <pose>14.040279 6.625660 47.620569 0.0 0.0 0.0</pose>
+      <static>true</static>
+      <link name='link'>
+        <visual name='visual'>
+          <geometry>
+            <box>
+              <size>0.5 0.5 0.5</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.0 0.0 0.0 1.0</ambient>
+            <diffuse>0.0 0.0 0.0 1.0</diffuse>
+            <specular>0.2 0.0 0.0 1.0</specular>
+          </material>
+        </visual>
+      </link>
+    </model> -->
+
+    <!-- Physics -->
+    <physics name='default_physics' default='true' type='ode'>
+      <max_step_size>0.002</max_step_size>
+      <real_time_factor>1.0</real_time_factor>
+      <real_time_update_rate>500</real_time_update_rate>
+      <!-- <gravity>0 0 -9.8</gravity> -->
+    </physics>
+
+    <!-- Scene settings -->
+    <scene>
+      <ambient>0.4 0.4 0.4 1</ambient>
+      <background>0.7 0.7 0.7 1</background>
+      <shadows>true</shadows>
+    </scene>
+
+    <!-- Spherical coordinates -->
+    <spherical_coordinates>
+      <surface_model>EARTH_WGS84</surface_model>
+      <latitude_deg>0</latitude_deg>
+      <longitude_deg>0</longitude_deg>
+      <elevation>0</elevation>
+      <heading_deg>0</heading_deg>
+    </spherical_coordinates>
+  </world>
+</sdf>

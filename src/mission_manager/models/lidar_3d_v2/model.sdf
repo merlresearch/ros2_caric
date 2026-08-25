@@ -1,0 +1,89 @@
+<?xml version="1.0" ?>
+<sdf version="1.6">
+  <model name="lidar_3d_v2">
+    <link name="link_3d">
+      <pose>0 0 0 0 0 0</pose>
+      <inertial>
+        <pose>0 0 0.0435 0 0 0</pose>
+        <mass>0.001</mass>
+        <inertia>
+          <ixx>0.0001</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.0001</iyy>
+          <iyz>0</iyz>
+          <izz>0.0001</izz>
+        </inertia>
+      </inertial>
+      <collision name="collision_base">
+        <pose>0 0 0.0205 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.06 0.06 0.041</size>
+          </box>
+        </geometry>
+      </collision>
+      <collision name="collision_mid">
+        <pose>0 0 0.055 0 0 0</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.025</radius>
+            <length>0.028</length>
+          </cylinder>
+        </geometry>
+      </collision>
+      <collision name="collision_top">
+        <pose>0 0 0.078 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.056 0.056 0.018</size>
+          </box>
+        </geometry>
+      </collision>
+      <visual name="visual">
+        <geometry>
+          <!-- <mesh>
+            <uri>model://lidar_2d_v2/meshes/lidar_2d_v2.dae</uri>
+          </mesh> -->
+          <box>
+            <size>0.03 0.03 0.08</size>
+          </box>
+        </geometry>
+      </visual>
+      <sensor name="lidar_3d_v2" type="gpu_lidar">
+        <!-- <pose>0 0 0.055 0 0 0</pose> -->
+        <pose>0 0 0.055 0 0 0</pose>
+        <ray>
+          <scan>
+            <horizontal>
+              <samples>720</samples>
+              <resolution>1</resolution>
+              <min_angle>-3.14159265</min_angle>
+              <max_angle>3.14159265</max_angle>
+            </horizontal>
+            <!-- Vertical scan for 3D capability -->
+            <vertical>
+              <samples>32</samples>
+              <resolution>1</resolution>
+              <min_angle>-0.35</min_angle>
+              <max_angle>0.35</max_angle>
+          </vertical>
+          </scan>
+          <range>
+            <min>0.1</min>
+            <max>250</max>
+            <resolution>0.01</resolution>
+          </range>
+          <noise>
+            <type>gaussian</type>
+            <mean>0.0</mean>
+            <stddev>0.001</stddev>
+          </noise>
+        </ray>
+        <always_on>1</always_on>
+        <update_rate>10</update_rate>
+        <visualize>false</visualize>
+      </sensor>
+    </link>
+  </model>
+</sdf>

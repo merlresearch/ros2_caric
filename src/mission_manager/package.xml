@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<!--
+Copyright (C) 2025-2026 Mitsubishi Electric Research Laboratories (MERL)
+
+SPDX-License-Identifier: BSD-3-Clause
+-->
+<?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
+<package format="3">
+  <name>mission_manager</name>
+  <version>0.0.1</version>
+  <description>Mission orchestration and benchmarking package: spawner, referee, scoring, mission controller and unified launch.</description>
+  <maintainer email="vinod@merl.com">Abraham P. Vinod</maintainer>
+  <license>BSD-3-Clause</license>
+
+  <depend>rclpy</depend>
+  <depend>std_msgs</depend>
+  <depend>sensor_msgs</depend>
+  <depend>vehicle_controller_interfaces</depend>
+  <depend>cv_bridge</depend>
+  <depend>px4_msgs</depend>
+
+  <test_depend>ament_flake8</test_depend>
+  <test_depend>ament_pep257</test_depend>
+  <test_depend>python3-pytest</test_depend>
+
+  <export>
+    <build_type>ament_python</build_type>
+  </export>
+</package>

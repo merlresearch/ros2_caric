@@ -1,0 +1,39 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+authors:
+  - family-names: "Folorunsho"
+    given-names: "Samuel"
+    affiliation: "University of Illinois, Urbana-Champaign"
+  - family-names: "Hayner"
+    given-names: "Christopher"
+    affiliation: "University of Washington, Seattle"
+  - family-names: "Di Cairano"
+    given-names: "Stefano"
+    affiliation: "Mitsubishi Electric Research Laboratories (MERL)"
+  - family-names: "P. Vinod"
+    given-names: "Abraham"
+    affiliation: "Mitsubishi Electric Research Laboratories (MERL)"
+title: "Coordinated aerial inspection of infrastructure with heterogeneous drones"
+version: 1.0.0
+date-released: 2026-05-01
+url: "https://github.com/merlresearch/ros2_caric"
+license: BSD-3-Clause
+preferred-citation:
+  type: conference-paper
+  authors:
+    - family-names: "Folorunsho"
+      given-names: "Samuel"
+      affiliation: "University of Illinois, Urbana-Champaign"
+    - family-names: "Hayner"
+      given-names: "Christopher"
+      affiliation: "University of Washington, Seattle"
+    - family-names: "Di Cairano"
+      given-names: "Stefano"
+      affiliation: "Mitsubishi Electric Research Laboratories (MERL)"
+    - family-names: "P. Vinod"
+      given-names: "Abraham"
+      affiliation: "Mitsubishi Electric Research Laboratories (MERL)"
+  title: "Coordinated aerial inspection of infrastructure with heterogeneous drones"
+  collection-title: "Proceedings of the 23rd IFAC World Congress"
+  year: 2026
+  note: (accepted)

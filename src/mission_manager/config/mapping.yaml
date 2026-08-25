@@ -1,0 +1,30 @@
+# Copyright (C) 2025-2026 Mitsubishi Electric Research Laboratories (MERL)
+#
+# SPDX-License-Identifier: BSD-3-Clause
+defaults:
+  # Vertical band of points to keep (meters in world frame)
+  z_min: 0.5
+  z_max: 80.0
+
+  # Occupancy inflation radius (meters)
+  inflate_m: 0.2
+
+  # Coverage / stability thresholds (used by mapping_node, coordinator, controller)
+  # Global: map must reach this ratio before any assignments start
+  global_min_known_ratio: 0.4 #0.48
+  # Cluster-level: local area around cluster center must meet this ratio
+  cluster_min_known_ratio: 0.4
+  # Cluster coverage check radius (meters)
+  cluster_coverage_radius_m: 20.0
+  # Stability: change threshold per cycle
+  stable_threshold: 0.02
+  # Stability: seconds map must be stable before controller freezes obstacles
+  stable_seconds: 0.0
+  stop_when_stable: false
+
+  # Free-space carving
+  carve_free: true
+  max_carve_hits: 10000
+
+  # Self-filter radius in sensor frame (meters)
+  self_filter_radius: 0.5

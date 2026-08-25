@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sdf version='1.9'>
+  <model name='x500_lidar_gimbal_explorer'>
+    <!-- Base x500 model -->
+    <include merge='true'>
+      <uri>model://x500</uri>
+    </include>
+
+    <!-- Gimbal (positioned at center) -->
+    <include merge='true'>
+      <uri>model://gimbal</uri>
+      <pose>0 0 0.26 0 0 3.14</pose>
+    </include>
+
+    <!-- 3D LiDAR (positioned forward and lower for better integration) -->
+    <include merge='true'>
+      <uri>model://lidar_3d_v2</uri>
+      <!-- <pose>0.12 0 0.20 0 0 0</pose> -->
+      <!-- <pose>0.12 0 0.28 0 0 0</pose> -->
+      <pose>0.12 0 0.28 0 0 0</pose>
+    </include>
+
+    <!-- Gimbal joint -->
+    <joint name="GimbalAttachJoint" type="fixed">
+      <parent>base_link</parent>
+      <child>cgo3_mount_link</child>
+    </joint>
+
+    <!-- Lidar joint -->
+    <joint name="Lidar3dJoint" type="fixed">
+      <parent>base_link</parent>
+      <child>link_3d</child>
+      <pose relative_to="base_link">0.12 0 0.28 0 0 0</pose>
+    </joint>
+  </model>
+</sdf>

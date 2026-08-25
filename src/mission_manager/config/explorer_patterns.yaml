@@ -1,0 +1,25 @@
+# Copyright (C) 2025-2026 Mitsubishi Electric Research Laboratories (MERL)
+#
+# SPDX-License-Identifier: BSD-3-Clause
+
+# x_start / y_start are in each drone's LOCAL (NED) frame, not world coordinates.
+# Use 0,0 so the pattern starts at the spawn position.
+# Drone 1 moves back so that they both can be on the same plane
+# The controller knows that drone 1 should trace the pattern forward, while drone 2 should trace the pattern backward
+
+# default=mbs
+default:
+  drone1: { x_start: -10.0, y_start: 0.0 }
+  drone2: { x_start: 0.0, y_start: 0.0 }
+  # directional increment when hitting high/low_altitude. total_runs are the number of half-periods.
+  scan: { x_decrement: 3.5, y_increment: 10.0, total_runs: 9 }
+  altitudes: { high_altitude: -65.0, low_altitude: -4.0, takeoff_height: -5.0 }
+
+mbs: {}
+
+powerline:
+  drone1: { x_start: 0.0, y_start: 0.0 }
+  drone2: { x_start: 0.0, y_start: 0.0 }
+  # directional increment when hitting high/low_altitude. total_runs are the number of half-periods.
+  scan: { x_decrement: 0.0, y_increment: 12.0, total_runs: 8 }
+  altitudes: { high_altitude: -37.0, low_altitude: -4.0, takeoff_height: -5.0 }

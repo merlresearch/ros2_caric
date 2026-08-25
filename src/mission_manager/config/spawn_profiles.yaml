@@ -1,0 +1,44 @@
+# Copyright (C) 2025-2026 Mitsubishi Electric Research Laboratories (MERL)
+#
+# SPDX-License-Identifier: BSD-3-Clause
+default:
+  # Map bounds for lidar mapping (meters, ENU frame)
+  map_bounds:
+    origin_x: -35.0
+    origin_y: -30.0
+    window_x: 130.0
+    window_y: 60.0
+  fleet:
+    - {name: jurong, role: explorer, instance: 1, autostart: 22101, model: gz_x500_lidar_gimbal_explorer, x: 0.0, y: 0.0, yaw_deg: 90}
+    - {name: changi, role: photographer, instance: 2, autostart: 22100, model: gz_x500_gimbal_photographer, x: -5, y: -25, yaw_deg: 0}
+    - {name: raffles, role: explorer, instance: 3, autostart: 22101, model: gz_x500_lidar_gimbal_explorer, x: 90.0, y: 0.0, yaw_deg: 230}
+    - {name: sentosa, role: photographer, instance: 4, autostart: 22100, model: gz_x500_gimbal_photographer, x: 5, y: -25, yaw_deg: 0}
+    - {name: nanyang, role: photographer, instance: 5, autostart: 22100, model: gz_x500_gimbal_photographer, x: 0, y: -30, yaw_deg: 0}
+
+mbs:
+  # MBS world: POIs range X: ~6 to ~74, Y: ~-17 to ~13
+  map_bounds:
+    origin_x: -35.0
+    origin_y: -30.0
+    window_x: 130.0
+    window_y: 60.0
+  fleet:
+    - {name: jurong, role: explorer, instance: 1, autostart: 22101, model: gz_x500_lidar_gimbal_explorer, x: 0.0, y: 0.0, yaw_deg: 90}
+    - {name: changi, role: photographer, instance: 2, autostart: 22100, model: gz_x500_gimbal_photographer, x: -5, y: -25, yaw_deg: 0}
+    - {name: raffles, role: explorer, instance: 3, autostart: 22101, model: gz_x500_lidar_gimbal_explorer, x: 80.0, y: -40.0, yaw_deg: 90}
+    - {name: sentosa, role: photographer, instance: 4, autostart: 22100, model: gz_x500_gimbal_photographer, x: 5, y: -25, yaw_deg: 0}
+    - {name: nanyang, role: photographer, instance: 5, autostart: 22100, model: gz_x500_gimbal_photographer, x: 0, y: -30, yaw_deg: 0}
+
+powerline:
+  # Powerline world: towers at X=0, 50, 100; Y spans ~-15 to ~15
+  map_bounds:
+    origin_x: -10.0
+    origin_y: -20.0
+    window_x: 110.0
+    window_y: 40.0
+  fleet:
+    - {name: jurong, role: explorer, instance: 1, autostart: 22101, model: gz_x500_lidar_gimbal_explorer, x: 0.0, y: -11.0, yaw_deg: 90}
+    - {name: changi, role: photographer, instance: 2, autostart: 22100, model: gz_x500_gimbal_photographer, x: 35, y: -15, yaw_deg: 0}
+    - {name: raffles, role: explorer, instance: 3, autostart: 22101, model: gz_x500_lidar_gimbal_explorer, x: 104.0, y: 17.0, yaw_deg: 230}
+    - {name: sentosa, role: photographer, instance: 4, autostart: 22100, model: gz_x500_gimbal_photographer, x: 50, y: -15, yaw_deg: 0}
+    - {name: nanyang, role: photographer, instance: 5, autostart: 22100, model: gz_x500_gimbal_photographer, x: 65, y: -15, yaw_deg: 0}

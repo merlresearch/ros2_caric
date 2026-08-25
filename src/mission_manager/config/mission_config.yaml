@@ -1,0 +1,22 @@
+# Copyright (C) 2025-2026 Mitsubishi Electric Research Laboratories (MERL)
+#
+# SPDX-License-Identifier: BSD-3-Clause
+##
+# MISSION CONFIGURATION
+
+
+mission:
+  # World to use (mbs, powerline)
+  world: mbs
+
+  # Difficulty level (easy 10 POI, medium 50 POI - default is easy)
+  difficulty: medium
+
+  # World model source: 'known' (pre-defined obstacles) or 'lidar_only' (live mapping - default is known)
+  world_model_source: lidar_only
+
+  # Run style: 'full' (until all POIs done) or 'timed' (time limit - default is full)
+  run_style: full
+
+  # Time limit in seconds (only used if run_style is 'timed' - default is 600 seconds)
+  time_limit_sec: 600

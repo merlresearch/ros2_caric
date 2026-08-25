@@ -1,0 +1,12 @@
+# Copyright (C) 2025-2026 Mitsubishi Electric Research Laboratories (MERL)
+#
+# SPDX-License-Identifier: BSD-3-Clause
+worlds:
+  mbs:
+    sdf_overrides:
+      easy: mbs_10_poi.sdf
+      medium: mbs_50_poi.sdf
+  powerline:
+    sdf_overrides:
+      easy: powerline_10_poi.sdf
+      medium: powerline_50_poi.sdf

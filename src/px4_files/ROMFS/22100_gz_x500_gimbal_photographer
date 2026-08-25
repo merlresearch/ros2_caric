@@ -1,0 +1,54 @@
+#!/bin/sh
+#
+# @name Gazebo x500 gimbal
+#
+# @type Quadrotor
+#
+
+PX4_SIM_MODEL=${PX4_SIM_MODEL:=x500_gimbal_photographer}
+
+. ${R}etc/init.d-posix/airframes/4001_gz_x500
+
+# Gimbal settings
+# Gimbal settings
+param set-default MNT_MODE_IN 4
+param set-default MNT_MODE_OUT 2
+param set-default MNT_RC_IN_MODE 1
+
+param set-default MNT_MAN_ROLL 1
+param set-default MNT_MAN_PITCH 2
+param set-default MNT_MAN_YAW 3
+
+param set-default MNT_RANGE_ROLL 180
+param set-default MNT_RANGE_PITCH 180
+param set-default MNT_RANGE_YAW 720
+
+# Disable preflight checks for multi-drone simulation
+param set-default NAV_DLL_ACT 0
+param set-default COM_RCL_EXCEPT 4
+param set-default COM_ARM_WO_GPS 1
+
+# Additional parameters to disable GCS connection requirements
+param set NAV_DLL_ACT 0
+param set COM_DLL_EXCEPT 7
+param set COM_DL_LOSS_T 60
+
+# Position control and GPS requirements
+param set-default EKF2_REQ_GPS_H 0.1
+param set-default EKF2_GPS_CHECK 0
+param set-default EKF2_GPS_CTRL 7
+param set-default EKF2_BARO_CTRL 1
+
+# Battery simulation parameters to prevent warnings
+param set-default SIM_BAT_MIN_PCT 80.0
+param set-default SIM_BAT_DRAIN 300
+param set-default COM_LOW_BAT_ACT 0
+
+# Completely disable all battery checks and warnings
+param set-default CBRK_SUPPLY_CHK 894281
+
+# Flight mode parameters
+param set-default MPC_POS_MODE 4
+param set-default EKF2_HGT_REF 0
+
+param set-default COM_OF_LOSS_T 2000
